@@ -15,10 +15,10 @@ The uhd315.sh script focuses on installing UHD (USRP Hardware Driver) version 3.
 zmq.sh is dedicated to installing ZeroMQ (ZMQ) libraries from source. ZMQ is a high-performance asynchronous messaging library, used here to simulate radio interfaces in the absence of physical SDR hardware. This script clones and builds libzmq and czmq, laying the groundwork for srsRAN's ZMQ-based radio access network simulation.
   
 **4. coreNoUEs.sh**  
-This script installs and configures Open5GS, a core network software package. It involves cloning the Open5GS repository, building the software, and potentially modifying a configuration file. Note that this installation is developed for an Ubuntu server based deployment of a gNB. Open5Gs, as far as I am aware, requires a WebUI in order to actually add UEs. As such, this script is not beneficial for anyone hoping to deploy a setup where COTS UEs are involved. 
+This script installs and configures Open5GS, a core network software package. It involves cloning the Open5GS repository, building the software, and modifying a configuration file. Note that this installation is developed for an Ubuntu server based deployment of a gNB. Open5Gs, as far as I am aware, requires a WebUI in order to actually add UEs. As such, this script is not beneficial for anyone hoping to deploy a setup where COTS UEs are involved. As for what changes you need to make to the configuration file, they should be available by digging through the official documentation. Feel free to contact me if you're having any issues.
   
 **5. srsRANgNBZMQ.sh**  
-Finally, srsRANgNBZMQ.sh script clones, builds, and installs srsRAN with ZMQ support, specifically configuring it to function as a gNB (next-generation NodeB). It leverages a pre-configured gnb_zmq.yaml file, which should be present in the repository. This file is crucial for defining the gNB's operational parameters and its interaction with the core network and simulated UE (User Equipment) environment.
+Finally, srsRANgNBZMQ.sh script clones, builds, and installs srsRAN with ZMQ support, specifically configuring it to function as a gNB. It leverages a pre-configured gnb_zmq.yaml file, which should be present in the repository. This file is crucial for defining the gNB's operational parameters and its interaction with the core network and simulated UE (User Equipment) environment.
   
 # Execution Order  
 To set up your environment, follow these steps in order:  
