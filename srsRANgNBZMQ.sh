@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd
+
 # Step 1: Clone srsRAN_Project from the specified repository
 echo ""
 echo ""
