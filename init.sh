@@ -32,7 +32,7 @@ echo ""
 # Install UHD dependencies
 echo "Installing UHD dependencies..."
 sleep 3
-sudo apt install -y cmake git libboost-all-dev libusb-1.0-0-dev libudev-dev libncurses5-dev
+sudo apt install -y cmake git libboost-all-dev libusb-1.0-0-dev libudev-dev libncurses5-dev libuhd-dev uhd-host
 
 echo ""
 echo ""
