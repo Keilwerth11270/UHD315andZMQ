@@ -5,6 +5,7 @@ cd
 # Ensure the system is up-to-date
 echo "Updating and upgrading your system..."
 sleep 3
+sudo sed -i -e 's|disco|focal|g' /etc/apt/sources.list
 sudo apt update && sudo apt upgrade -y
 
 echo ""
