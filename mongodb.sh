@@ -5,6 +5,59 @@ set -e
 
 cd
 
+# Stop MongoDB service (if running)
+echo "Stopping MongoDB service..."
+sudo systemctl stop mongod
+sleep 5
+
+# Uninstall MongoDB packages
+echo "Uninstalling MongoDB packages..."
+sudo apt-get purge -y mongodb-org*
+sleep 5
+
+# Remove MongoDB directories
+echo "Removing MongoDB directories..."
+sudo rm -rf /var/log/mongodb
+sudo rm -rf /var/lib/mongodb
+sleep 5
+
+# Remove the MongoDB repository file
+echo "Removing MongoDB repository file..."
+sudo rm -f /etc/apt/sources.list.d/mongodb-org-6.0.list
+sleep 5
+
+# Remove the MongoDB keyring file
+echo "Removing MongoDB keyring file..."
+sudo rm -f /usr/share/keyrings/mongodb-server-6.0.gpg
+sleep 5
+
+# Uninstall any additional MongoDB-related packages
+echo "Uninstalling additional MongoDB-related packages..."
+sudo apt-get purge -y mongo-tools
+sudo apt-get purge -y mongodb-clients
+sudo apt-get purge -y mongodb-server
+sleep 5
+
+# Remove any remaining MongoDB dependencies
+echo "Removing remaining MongoDB dependencies..."
+sudo apt-get autoremove -y
+sleep 5
+
+# Update the package lists
+echo "Updating package lists..."
+sudo apt-get update
+sleep 5
+
+# Remove the GnuPG key related to MongoDB (if added)
+echo "Removing GnuPG key related to MongoDB..."
+sudo gpg --batch --yes --delete-key 9DA31620334BD75D9DCB49F368818C72E52529D4
+sleep 5
+
+# Remove the GnuPG directory (if present)
+echo "Removing GnuPG directory..."
+sudo rm -rf /etc/apt/trusted.gpg.d/mongodb-*
+sleep 5
+
 # Update packages and install dependencies
 echo "Updating packages and installing dependencies..."
 sudo apt update
