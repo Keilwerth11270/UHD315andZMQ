@@ -1,14 +1,6 @@
 #!/bin/bash
 
-# Exit script on any error
-set -e
-
 cd
-
-# Stop MongoDB service (if running)
-echo "Stopping MongoDB service..."
-sudo systemctl stop mongod
-sleep 5
 
 # Uninstall MongoDB packages
 echo "Uninstalling MongoDB packages..."
@@ -46,11 +38,6 @@ sleep 5
 # Update the package lists
 echo "Updating package lists..."
 sudo apt-get update
-sleep 5
-
-# Remove the GnuPG key related to MongoDB (if added)
-echo "Removing GnuPG key related to MongoDB..."
-sudo gpg --batch --yes --delete-key 9DA31620334BD75D9DCB49F368818C72E52529D4
 sleep 5
 
 # Remove the GnuPG directory (if present)
