@@ -24,7 +24,7 @@ echo ""
 # Install dependencies for Open5GS
 echo "Installing dependencies for Open5GS..."
 sleep 3
-sudo apt install -y python3-pip python3-setuptools python3-wheel ninja-build build-essential flex bison git cmake libsctp-dev libgnutls28-dev libgcrypt-dev libssl-dev libidn11-dev libmongoc-dev libbson-dev libyaml-dev libnghttp2-dev libmicrohttpd-dev libcurl4-gnutls-dev libnghttp2-dev libtins-dev libtalloc-dev meson libtool libdw-dev binutils-dev libdwarf-dev doxygen libmbedtls-dev libfftw3-dev libgtest-dev libyaml-cpp-dev libsctp-dev libboost-program-options-dev libconfig++-dev ca-certificates curl
+sudo apt install -y python3-pip python3-setuptools python3-wheel ninja-build build-essential flex bison git cmake libsctp-dev libgnutls28-dev libgcrypt-dev libssl-dev libidn11-dev libmongoc-dev libbson-dev libyaml-dev libnghttp2-dev libmicrohttpd-dev libcurl4-gnutls-dev libnghttp2-dev libtins-dev libtalloc-dev meson libtool libdw-dev binutils-dev libdwarf-dev doxygen libmbedtls-dev libfftw3-dev gcc-10 g++-10 libgtest-dev libyaml-cpp-dev libsctp-dev libboost-program-options-dev libconfig++-dev ca-certificates curl
 
 echo ""
 echo ""
